@@ -27,7 +27,7 @@
         "before 5am on Sunday",
     ],
     addLabels: ["dependencies"],
-    git-submodules: {
+    "git-submodules": {
         "enabled": true
     }
 }
