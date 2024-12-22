@@ -5,7 +5,7 @@
     // Git submodule updates (https://docs.renovatebot.com/modules/manager/git-submodules/) are not enabled because that
     // seems to update submodules to random old commits.
     $schema: "https: //docs.renovatebot.com/renovate-schema.json",
-    description: "Default Lombiq Renovate configuration",
+    description: "Default Lombiq Renovate configuration.",
     extends: [
         "config:recommended",
         ":enableVulnerabilityAlerts",
@@ -15,15 +15,6 @@
     ],
     // See https://docs.renovatebot.com/configuration-options/#configmigration.
     configMigration: true,
-    packageRules: [
-        {
-            // We update OC packages by hand.
-            matchPackageNames: [
-                "OrchardCore*",
-            ],
-            enabled: false,
-        },
-    ],
     // We only need updates once a week.
     schedule: [
         "before 5am on Sunday",

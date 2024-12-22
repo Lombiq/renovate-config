@@ -1,0 +1,5 @@
+{
+    $schema: "https: //docs.renovatebot.com/renovate-schema.json",
+    description: "Default configuration for Orchard Core-using Git submodules.",
+    "extends": ["github>Lombiq/renovate-config:default-orchard-core.json5"],
+}
