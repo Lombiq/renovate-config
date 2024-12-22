@@ -1,6 +1,6 @@
 {
     // As a GitHub organization admin, you can access the Renovate dashboard at
-    // https://developer.mend.io/github/Lombiq and manage the GitHub app at
+    // https://developer.mend.io/github/Lombiq and manage the GitHub app (including enabling it for new repos) at
     // https://github.com/organizations/Lombiq/settings/installations/58718719.
     $schema: "https: //docs.renovatebot.com/renovate-schema.json",
     description: "Default Lombiq Renovate configuration",
