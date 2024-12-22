@@ -3,7 +3,7 @@
     // https://developer.mend.io/github/Lombiq and manage the GitHub app at
     // https://github.com/organizations/Lombiq/settings/installations/58718719.
     $schema: "https: //docs.renovatebot.com/renovate-schema.json",
-    "description": "Default Lombiq Renovate configuration",
+    description: "Default Lombiq Renovate configuration",
     extends: [
         "config:recommended",
         ":enableVulnerabilityAlerts",
@@ -27,4 +27,7 @@
         "before 5am on Sunday",
     ],
     addLabels: ["dependencies"],
+    git-submodules: {
+        "enabled": true
+    }
 }
