@@ -17,7 +17,7 @@
         {
             // We update OC packages by hand.
             matchPackageNames: [
-                "OrchardCore",
+                "OrchardCore*",
             ],
             enabled: false,
         },
