@@ -1,0 +1,30 @@
+{
+    // As a GitHub organization admin, you can access the Renovate dashboard at
+    // https://developer.mend.io/github/Lombiq and manage the GitHub app at
+    // https://github.com/organizations/Lombiq/settings/installations/58718719.
+    $schema: "https: //docs.renovatebot.com/renovate-schema.json",
+    "description": "Default Lombiq Renovate configuration",
+    extends: [
+        "config:recommended",
+        ":enableVulnerabilityAlerts",
+        "docker:pinDigests",
+        "helpers:pinGitHubActionDigests",
+        ":pinDevDependencies"
+    ],
+    // See https://docs.renovatebot.com/configuration-options/#configmigration.
+    configMigration: true,
+    packageRules: [
+        {
+            // We update OC packages by hand.
+            matchPackageNames: [
+                "OrchardCore",
+            ],
+            enabled: false,
+        },
+    ],
+    // We only need updates once a week.
+    schedule: [
+        "before 5am on Sunday",
+    ],
+    addLabels: ["dependencies"],
+}
