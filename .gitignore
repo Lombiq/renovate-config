@@ -5,14 +5,3 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-obj/
-bin/
-artifacts/
-wwwroot/
-node_modules/
-*.user
-.pnpm-debug.log
-
-# Mac
-.DS_Store
-

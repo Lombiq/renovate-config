@@ -1,14 +1,10 @@
-# Lombiq <add project name here>
+# Lombiq Renovate Configuration Presets
 
 ## About
 
-Add a general overview of the project here. Keep or remove the OSOCE note below as necessary.
+Common configuration presets for [Renovate](https://www.mend.io/renovate/) to keep the dependencies of our projects up to date (see [the docs](https://docs.renovatebot.com/config-presets/)).
 
-Do you want to quickly try out this project and see it in action? Check it out in our [Open-Source Orchard Core Extensions](https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions) full Orchard Core solution and also see our other useful Orchard Core-related open-source projects!
-
-## Documentation
-
-Add detailed documentation here. If it's a lot of content then create documentation pages under the *Docs* folder and link pages here.
+If you're a Lombiq team member, check out [the corresponding wiki page](https://lombiq.atlassian.net/wiki/spaces/DEV/pages/3336241155/Dependency+updates+with+Renovate).
 
 ## Contributing and support
 
