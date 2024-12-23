@@ -4,7 +4,7 @@
 
 Common configuration presets for [Renovate](https://www.mend.io/renovate/) to keep the dependencies of our projects up to date (see [the docs](https://docs.renovatebot.com/config-presets/)).
 
-If you're a Lombiq team member, check out [the corresponding wiki page](https://lombiq.atlassian.net/wiki/spaces/DEV/pages/3336241155/Dependency+updates+with+Renovate).
+If you're a Lombiq team member, check out [the corresponding wiki page](https://lombiq.atlassian.net/wiki/spaces/DEV/pages/3336241155/Dependency+updates+with+Renovate) too.
 
 ## Contributing and support
 
