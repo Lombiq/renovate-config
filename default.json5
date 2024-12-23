@@ -13,12 +13,20 @@
         'helpers:pinGitHubActionDigests',
         ':pinDevDependencies'
     ],
+    addLabels: ['dependencies'],
     // See https://docs.renovatebot.com/configuration-options/#configmigration. This always uses single quotes, so we
     // use those too.
     configMigration: true,
+    "packageRules": [
+        {
+            groupName: 'Lombiq packages',
+            matchPackageNames: [
+                'Lombiq.*',
+            ],
+        },
+    ],
     // We only need updates once a week.
     schedule: [
         'before 5am on Sunday',
     ],
-    addLabels: ['dependencies'],
 }
