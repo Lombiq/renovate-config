@@ -10,9 +10,5 @@
             ],
             enabled: false,
         },
-        {
-            groupName: "dotnetMonorepo",
-            enabled: false,
-        },
     ]
 }
