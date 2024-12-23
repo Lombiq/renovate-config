@@ -1,12 +1,12 @@
 {
-    $schema: "https: //docs.renovatebot.com/renovate-schema.json",
-    description: "Default configuration for any Orchard Core-using project.",
-    "extends": ["github>Lombiq/renovate-config:default-dotnet.json5"],
+    $schema: 'https: //docs.renovatebot.com/renovate-schema.json',
+    description: 'Default configuration for any Orchard Core-using project.',
+    'extends': ['github>Lombiq/renovate-config:default-dotnet.json5'],
     packageRules: [
         {
             // We update OC packages by hand.
             matchPackageNames: [
-                "OrchardCore*",
+                'OrchardCore*',
             ],
             enabled: false,
         },

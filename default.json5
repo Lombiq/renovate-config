@@ -4,20 +4,21 @@
     // https://github.com/organizations/Lombiq/settings/installations/58718719.
     // Git submodule updates (https://docs.renovatebot.com/modules/manager/git-submodules/) are not enabled because that
     // seems to update submodules to random old commits.
-    $schema: "https: //docs.renovatebot.com/renovate-schema.json",
-    description: "Default Lombiq Renovate configuration.",
+    $schema: 'https: //docs.renovatebot.com/renovate-schema.json',
+    description: 'Default Lombiq Renovate configuration.',
     extends: [
-        "config:recommended",
-        ":enableVulnerabilityAlerts",
-        "docker:pinDigests",
-        "helpers:pinGitHubActionDigests",
-        ":pinDevDependencies"
+        'config:recommended',
+        ':enableVulnerabilityAlerts',
+        'docker:pinDigests',
+        'helpers:pinGitHubActionDigests',
+        ':pinDevDependencies'
     ],
-    // See https://docs.renovatebot.com/configuration-options/#configmigration.
+    // See https://docs.renovatebot.com/configuration-options/#configmigration. This always uses single quotes, so we
+    // use those too.
     configMigration: true,
     // We only need updates once a week.
     schedule: [
-        "before 5am on Sunday",
+        'before 5am on Sunday',
     ],
-    addLabels: ["dependencies"],
+    addLabels: ['dependencies'],
 }
