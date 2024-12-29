@@ -26,7 +26,6 @@
         {
             // Will be done in https://lombiq.atlassian.net/browse/OSOE-935.
             matchPackageNames: [
-                'Microsoft.NET.Test.Sdk',
                 'xunit*',
             ],
             enabled: false,
