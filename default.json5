@@ -4,7 +4,7 @@
     // https://github.com/organizations/Lombiq/settings/installations/58718719.
     // Git submodule updates (https://docs.renovatebot.com/modules/manager/git-submodules/) are not enabled because that
     // seems to update submodules to random old commits.
-    $schema: 'https: //docs.renovatebot.com/renovate-schema.json',
+    $schema: 'https://docs.renovatebot.com/renovate-schema.json',
     description: 'Default Lombiq Renovate configuration.',
     extends: [
         'config:recommended',
