@@ -24,6 +24,7 @@
             matchPackageNames: [
                 'Lombiq.*',
             ],
+            "allowedVersions": "/^(?!.*-alpha).+$/"
         },
     ],
     // We only need updates once a week.
