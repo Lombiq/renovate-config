@@ -29,6 +29,6 @@
     ],
     // We only need updates once a week.
     schedule: [
-        'before 5am on Sunday',
+        'before 3am on Sunday',
     ],
 }
