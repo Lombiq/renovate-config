@@ -27,6 +27,8 @@
             allowedVersions: '!/.*-alpha.*/'
         },
     ],
+    // With GitHub Actions, concurrency is not really an issue.
+    prHourlyLimit: 0,
     // We only need updates once a week.
     schedule: [
         'before 3am on Sunday',
