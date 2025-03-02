@@ -21,7 +21,13 @@
                 'https://github.com/dotnet/sdk',
             ],
             'matchUpdateTypes': ['major'],
-            enabled: false
+            enabled: false,
+        },
+        {
+            groupName: 'xUnit packages',
+            matchPackageNames: [
+                'xunit.*',
+            ],
         },
     ]
 }
