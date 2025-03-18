@@ -2,8 +2,6 @@
     // As a GitHub organization admin, you can access the Renovate dashboard at
     // https://developer.mend.io/github/Lombiq and manage the GitHub app (including enabling it for new repos) at
     // https://github.com/organizations/Lombiq/settings/installations/58718719.
-    // Git submodule updates (https://docs.renovatebot.com/modules/manager/git-submodules/) are not enabled because that
-    // seems to update submodules to random old commits.
     $schema: 'https://docs.renovatebot.com/renovate-schema.json',
     description: 'Default Lombiq Renovate configuration.',
     extends: [
@@ -27,6 +25,9 @@
             allowedVersions: '!/.*-alpha.*/'
         },
     ],
+	"git-submodules": {
+        "enabled": true
+    }
     // With GitHub Actions, concurrency is not really an issue.
     prHourlyLimit: 0,
     // We only need updates once a week.
