@@ -1,7 +1,7 @@
 {
     $schema: 'https://docs.renovatebot.com/renovate-schema.json',
     description: 'Default configuration for any .NET project.',
-    'extends': ['github>Lombiq/renovate-config:default.json5#issue/NEST-556'],
+    'extends': ['github>Lombiq/renovate-config:default.json5'],
     packageRules: [
         {
             // These packages are tightly related to .NET versions. We update .NET, and these packages, by hand, when
