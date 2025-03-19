@@ -24,6 +24,10 @@
             ],
             allowedVersions: '!/.*-alpha.*/'
         },
+        {
+            groupName: 'Submodule Updates',
+            matchManagers: ['git-submodules']
+        },
     ],
     // With GitHub Actions, concurrency is not really an issue.
     prHourlyLimit: 0,
