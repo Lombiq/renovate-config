@@ -25,7 +25,7 @@
             allowedVersions: '!/.*-alpha.*/'
         },
         {
-            groupName: 'Submodule Updates',
+            groupName: 'Submodules',
             matchManagers: ['git-submodules']
         },
     ],
