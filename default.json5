@@ -32,6 +32,6 @@
         'before 3am on Sunday',
     ],
     git-submodules: {
-        enabled: true
+        'enabled': true
     }
 }
