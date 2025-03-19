@@ -31,7 +31,7 @@
     schedule: [
         'before 3am on Sunday',
     ],
-	"git-submodules": {
+    git-submodules: {
         "enabled": true
     }
 }
