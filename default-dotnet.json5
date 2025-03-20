@@ -29,7 +29,7 @@
                 'xunit.*',
             ],
         },
-		{
+	{
             groupName: 'SixLabors ImageSharp packages',
             matchPackageNames: ['SixLabors.ImageSharp*'],
         },
