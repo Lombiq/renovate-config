@@ -24,6 +24,10 @@
             ],
             allowedVersions: '!/.*-alpha.*/'
         },
+		 {
+            groupName: 'SixLabors ImageSharp Web packages',
+            matchPackageNames: ['SixLabors.ImageSharp.Web*'],
+        },
         {
             groupName: 'Submodules',
             matchManagers: ['git-submodules']
