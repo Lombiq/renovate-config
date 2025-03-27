@@ -11,7 +11,7 @@
         'helpers:pinGitHubActionDigests',
         ':pinDevDependencies'
     ],
-    addLabels: ['dependencies'],
+    addLabels: ['dependencies', 'renovate'],
     // See https://docs.renovatebot.com/configuration-options/#configmigration. This always uses single quotes, so we
     // use those too.
     configMigration: true,
