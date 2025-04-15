@@ -3,12 +3,23 @@
     description: 'Default configuration for any Orchard Core-using project.',
     extends: ['github>Lombiq/renovate-config:default-dotnet.json5'],
     packageRules: [
+        // We update Orchard Core packages by hand, since updates should be deliberate, and each shared project should
+        // target the latest .0 version. Web projects, however, should be updated to the latest patch version.
         {
-            // We update OC packages by hand.
             matchPackageNames: [
                 'OrchardCore*',
             ],
+            matchFileNames: ['!**/*.Web/**'],
             enabled: false,
+        },
+        {
+            groupName: 'Patch Orchard Core Version in Web Projects',
+            matchPackageNames: [
+                'OrchardCore*',
+            ],
+            matchUpdateTypes: ['patch'],
+            matchFileNames: ['**/*.Web/**'],
+            enabled: true,
         },
     ]
 }
