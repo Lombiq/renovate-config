@@ -34,7 +34,7 @@
         // While minor versions are supposed to be non-breaking too, those often require some more thought due to new
         // features that we might want to utilize.
         {
-            groupName: 'Non-Breaking Dependency Versions',
+            groupName: 'Patch Dependency Versions',
             matchUpdateTypes: ['patch', 'pin', 'pinDigest'],
         },
     ],
