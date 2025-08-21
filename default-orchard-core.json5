@@ -17,9 +17,19 @@
             matchPackageNames: [
                 'OrchardCore*',
             ],
-            matchUpdateTypes: ['patch'],
             matchFileNames: ['**/*.Web/**'],
             enabled: true,
+            separateMinorPatch: true,
+        },
+        {
+            // Major and minor updates of Orchard Core packages in web projects should be separately disabled to get
+            // only patch updates.
+            matchPackageNames: [
+                'OrchardCore*',
+            ],
+            matchUpdateTypes: ['major', 'minor'],
+            matchFileNames: ['**/*.Web/**'],
+            enabled: false,
         },
     ]
 }
