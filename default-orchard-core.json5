@@ -31,5 +31,13 @@
             matchFileNames: ['**/*.Web/**'],
             enabled: false,
         },
+        {
+            // PNPM, i.e. the package manager configured in package.json files, may only be updated once
+            // https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/issues/965 is done.
+            matchPackageNames: [
+                'pnpm',
+            ],
+            enabled: false,
+        },
     ]
 }
