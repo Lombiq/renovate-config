@@ -33,7 +33,7 @@
         },
         {
             // We keep PNPM on v9 since our Node.js Extensions project is now deprecated, see
-            https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/issues/965.
+            // https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/issues/965.
             matchManagers: ['npm'],
             matchDepTypes: ['packageManager'],
             matchPackageNames: ['pnpm'],
