@@ -48,4 +48,18 @@
     'git-submodules': {
         enabled: true,
     },
+    customManagers: [
+        {
+            depNameTemplate: 'NPM packages via Microsoft Library Manager (LibMan)',
+            customType: 'jsonata',
+            fileFormat: 'json',
+            managerFilePatterns: [
+                '/libman.json/',
+            ],
+            matchStrings: [
+                'libraries.{ "packageName": $replace(library, /@.*/, ""), "currentValue": $replace(library, /.*@/, "") }',
+            ]
+            datasourceTemplate: 'npm',
+        }
+    ],
 }
