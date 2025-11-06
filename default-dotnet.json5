@@ -26,6 +26,9 @@
         {
             groupName: 'xUnit packages',
             matchPackageNames: [ 'xunit.*' ],
+            prBodyNotes: [
+                'For more details, see the [xUnit release notes](https://xunit.net/releases/).',
+            ],
         },
         {
             groupName: 'SixLabors ImageSharp packages',
