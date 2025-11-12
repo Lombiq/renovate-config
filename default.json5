@@ -58,7 +58,7 @@
             ],
             matchStrings: [
                 'libraries.{ "packageName": $replace(library, /@.*/, ""), "currentValue": $replace(library, /.*@/, "") }',
-            ]
+            ],
             datasourceTemplate: 'npm',
         }
     ],
