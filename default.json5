@@ -68,7 +68,7 @@
                 '/libman.json/',
             ],
             matchStrings: [
-                '"library": "(?<depName>[^"@\/]+\/[^"@]+?)@(?<currentDigestShort>[^"]+?)"'
+                '"library": "(?<depName>[^"@\/]+\/[^"@]+?)@(?<currentDigest>[^"]+?)"'
             ],
             currentValueTemplate: "master",
             packageNameTemplate: "https://github.com/{{{depName}}}",
