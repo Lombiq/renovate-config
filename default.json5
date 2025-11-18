@@ -57,7 +57,18 @@
                 '/libman.json/',
             ],
             matchStrings: [
-                'libraries.{ "packageName": $replace(library, /@.*/, ""), "currentValue": $replace(library, /.*@/, "") }',
+                'libraries[$contains(library, "/") = false].{ "packageName": $replace(library, /@.*/, ""), "currentValue": $replace(library, /.*@/, "") }',
+            ],
+            datasourceTemplate: 'npm',
+        },
+        {
+            depNameTemplate: 'GitHub packages in NPM format via Microsoft Library Manager (LibMan)',
+            customType: 'regex',
+            managerFilePatterns: [
+                '/libman.json/',
+            ],
+            matchStrings: [
+                'libraries[npmPackageName and $contains(library, "/")].{ "packageName": npmPackageName, "currentValue": $replace(library, /(.*)@/, "github:$1#") }',
             ],
             datasourceTemplate: 'npm',
         }
