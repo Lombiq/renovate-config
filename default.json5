@@ -62,16 +62,17 @@
             datasourceTemplate: 'npm',
         },
         {
-            depNameTemplate: 'GitHub packages in NPM format via Microsoft Library Manager (LibMan)',
-            customType: 'jsonata',
-            fileFormat: 'json',
+            depNameTemplate: 'GitHub repository via Microsoft Library Manager (LibMan)',
+            customType: 'regex',
             managerFilePatterns: [
                 '/libman.json/',
             ],
             matchStrings: [
-                'libraries[npmPackageName and $contains(library, "/")].{ "packageName": npmPackageName, "currentValue": $replace(library, /(.*)@/, "github:$1#") }',
+                '"library": "(?<depName>[^"@]+?)@(?<currentDigest>[^"]+?)"'
             ],
-            datasourceTemplate: 'npm',
+            currentValueTemplate: "master",
+            packageNameTemplate: "https://github.com/{{{depName}}}",
+            datasourceTemplate: 'git-refs'
         }
     ],
 }
