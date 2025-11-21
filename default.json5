@@ -48,4 +48,31 @@
     'git-submodules': {
         enabled: true,
     },
+    customManagers: [
+        {
+            depNameTemplate: 'NPM packages via Microsoft Library Manager (LibMan)',
+            customType: 'jsonata',
+            fileFormat: 'json',
+            managerFilePatterns: [
+                '/libman.json/',
+            ],
+            matchStrings: [
+                'libraries[$contains(library, "/") = false].{ "packageName": $replace(library, /@.*/, ""), "currentValue": $replace(library, /.*@/, "") }',
+            ],
+            datasourceTemplate: 'npm',
+        },
+        {
+            depNameTemplate: 'GitHub repository via Microsoft Library Manager (LibMan)',
+            customType: 'regex',
+            managerFilePatterns: [
+                '/libman.json/',
+            ],
+            matchStrings: [
+                '"library": "(?<depName>[^"@\/]+\/[^"@]+?)@(?<currentDigest>[^"]+?)"'
+            ],
+            currentValueTemplate: "master",
+            packageNameTemplate: "https://github.com/{{{depName}}}",
+            datasourceTemplate: 'git-refs'
+        }
+    ],
 }
