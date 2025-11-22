@@ -20,16 +20,27 @@
     configMigration: true,
     dependencyDashboard: false,
     packageRules: [
+        // Wait 3 days after a major/minor release, and if there's a patch release since then, update to that right
+        // away. This is to avoid updating if bugfixes soon come. 
+        {
+            "matchUpdateTypes": ['major', 'minor'],
+            "minimumReleaseAge": '3 days',
+        },
+        {
+            "matchUpdateTypes": ['patch'],
+            "minimumReleaseAge": '0 days',
+        },
+        {
+            groupName: 'Submodules',
+            matchManagers: ['git-submodules'],
+            minimumReleaseAge: '0 days',
+        },
         {
             groupName: 'Lombiq packages',
             matchPackageNames: [
                 'Lombiq.*',
             ],
             allowedVersions: '!/.*-alpha.*/'
-        },
-        {
-            groupName: 'Submodules',
-            matchManagers: ['git-submodules']
         },
         // While minor versions are supposed to be non-breaking too, those often require some more thought due to new
         // features that we might want to utilize.
@@ -40,6 +51,11 @@
     ],
     // With GitHub Actions, concurrency is not really an issue.
     prHourlyLimit: 0,
+    // Only open the PR if minimumReleaseAge has passed.
+    prCreation: 'not-pending',
+    // Without timestamp-optional, Renovate wouldn't update dependencies of package managers that don't provide
+    // timestamps, like GitHub Actions and git-submodules.
+    minimumReleaseAgeBehaviour: 'timestamp-optional',
     // Between 0:00 and 6:59 UTC on Sundays. Large time window to ensure that Renovate runs at least once then:
     // https://docs.renovatebot.com/configuration-options/#schedule.
     schedule: [
