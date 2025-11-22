@@ -8,6 +8,8 @@
             // being referenced by both the superproject and a submodule), we update all dependencies at once.
             groupName: 'All Dependencies',
             matchUpdateTypes: ['*'],
+            // This is so major updates won't be put in a separate branch.
+            branchName: 'renovate/all-dependencies',
         },
     ],
 }
