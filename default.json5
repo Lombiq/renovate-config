@@ -51,8 +51,8 @@
     ],
     // With GitHub Actions, concurrency is not really an issue.
     prHourlyLimit: 0,
-    // Only open the PR if minimumReleaseAge has passed.
-    prCreation: 'not-pending',
+    // Note that prCreation: 'not-pending' is NOT needed, despite the Renovate docs recommending it, because it causes
+    // no PRs to be created with `"prBlockedBy": "AwaitingTests",`. Keeping it on the default works as expected.
     // Without timestamp-optional, Renovate wouldn't update dependencies of package managers that don't provide
     // timestamps, like GitHub Actions and git-submodules.
     minimumReleaseAgeBehaviour: 'timestamp-optional',
