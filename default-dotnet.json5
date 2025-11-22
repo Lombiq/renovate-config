@@ -47,5 +47,5 @@
             matchPackageNames: ['pnpm'],
             allowedVersions: '<10.0.0',
         },
-    ]
+    ],
 }
