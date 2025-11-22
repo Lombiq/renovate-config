@@ -5,36 +5,15 @@
     $schema: 'https://docs.renovatebot.com/renovate-schema.json',
     description: 'Default Lombiq Renovate configuration.',
     extends: [
-        'config:recommended',
-        ':enableVulnerabilityAlerts',
-        'docker:pinDigests',
-        'helpers:pinGitHubActionDigests',
-        ':pinDevDependencies'
+        // See https://docs.renovatebot.com/presets-config/#configbest-practices.
+        'config:best-practices',
     ],
     addLabels: [
         'dependencies',
         'renovate',
     ],
-    // See https://docs.renovatebot.com/configuration-options/#configmigration. This always uses single quotes, so we
-    // use those too.
-    configMigration: true,
     dependencyDashboard: false,
     packageRules: [
-        // Wait 15 days after a major/minor release, and if there's a patch release since then, update to that right
-        // away. This is to avoid updating if bugfixes soon follow releases. 
-        {
-            "matchUpdateTypes": ['major', 'minor'],
-            "minimumReleaseAge": '15 days',
-        },
-        {
-            "matchUpdateTypes": ['patch'],
-            "minimumReleaseAge": '0 days',
-        },
-        {
-            groupName: 'Submodules',
-            matchManagers: ['git-submodules'],
-            minimumReleaseAge: '0 days',
-        },
         {
             groupName: 'Lombiq packages',
             matchPackageNames: [
@@ -47,6 +26,13 @@
         {
             groupName: 'Patch Dependency Versions',
             matchUpdateTypes: ['patch', 'pin', 'pinDigest'],
+        },
+        {
+            groupName: 'Submodules',
+            matchManagers: ['git-submodules'],
+            // Even if the minimumReleaseAge is configured for other dependencies, submodules, since they don't have
+            // release timestamps, should be updated right away.
+            minimumReleaseAge: '0 days',
         },
     ],
     // With GitHub Actions, concurrency is not really an issue.
