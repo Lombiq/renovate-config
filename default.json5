@@ -21,6 +21,18 @@
             ],
             allowedVersions: '!/.*-alpha.*/'
         },
+        // Wait a bit with major and minor releases so if patches come out fixing bugs in them, we can instead update to
+        // those right away. Patch updates won't be sent by Renovate instead of the major/minor ones, though, since it
+        // can't do that: https://github.com/renovatebot/renovate/discussions/39472#discussioncomment-15078711. But at
+        // least the pending patch update will be shown in the table under the PR.
+        {
+            matchUpdateTypes: ['major', 'minor'],
+            minimumReleaseAge: '15 days',
+        },
+        {
+            matchUpdateTypes: ['patch'],
+            minimumReleaseAge: '0 days',
+        },
         // While minor versions are supposed to be non-breaking too, those often require some more thought due to new
         // features that we might want to utilize.
         {
