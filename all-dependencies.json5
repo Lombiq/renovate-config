@@ -1,0 +1,12 @@
+{
+    $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+    description: 'Configuration for projects that handle all dependency updates at once. This is meant to be combined with other base configs.',
+    packageRules: [
+        {
+            groupName: 'All Dependencies',
+            matchUpdateTypes: ['*'],
+        },
+    ],
+    // This is so major updates won't be put in a separate branch.
+    separateMajorMinor: false,
+}

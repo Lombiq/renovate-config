@@ -1,15 +1,10 @@
 {
     $schema: 'https://docs.renovatebot.com/renovate-schema.json',
     description: 'Default configuration for Orchard Core-using Git superprojects (repositories that may contain submodules).',
-    extends: ['github>Lombiq/renovate-config:default-orchard-core.json5'],
-    packageRules: [
-        {
-            // Not to create mismatches between submodule and superproject dependencies (like the same NuGet package
-            // being referenced by both the superproject and a submodule), we update all dependencies at once.
-            groupName: 'All Dependencies',
-            matchUpdateTypes: ['*'],
-        },
+    extends: [
+        'github>Lombiq/renovate-config:default-orchard-core.json5',
+        // Not to create mismatches between submodule and superproject dependencies (like the same NuGet package being
+        // referenced by both the superproject and a submodule), we update all dependencies at once.
+        'github>Lombiq/renovate-config:all-dependencies.json5',
     ],
-    // This is so major updates won't be put in a separate branch.
-    separateMajorMinor: false,
 }
