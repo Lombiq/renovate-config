@@ -64,7 +64,7 @@
     },
     customManagers: [
         {
-            depNameTemplate: 'NPM packages via Microsoft Library Manager (LibMan)',
+            // NPM packages via Microsoft Library Manager (LibMan)
             customType: 'jsonata',
             fileFormat: 'json',
             managerFilePatterns: [
@@ -76,7 +76,7 @@
             datasourceTemplate: 'npm',
         },
         {
-            depNameTemplate: 'GitHub repository via Microsoft Library Manager (LibMan)',
+            // GitHub repository via Microsoft Library Manager (LibMan)
             customType: 'regex',
             managerFilePatterns: [
                 '/libman.json/',
