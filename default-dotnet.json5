@@ -40,12 +40,19 @@
             matchPackageNames: ['SixLabors.ImageSharp*'],
         },
         {
+            // While about NPM, this is only for .NET projects.
             // We keep PNPM on v9 since our Node.js Extensions project is now deprecated, see
             // https://github.com/Lombiq/Open-Source-Orchard-Core-Extensions/issues/965.
             matchManagers: ['npm'],
             matchDepTypes: ['packageManager'],
             matchPackageNames: ['pnpm'],
             allowedVersions: '<10.0.0',
+        },
+        {
+            // Don't upgrade Scrutor until this is fixed: https://github.com/khellang/Scrutor/issues/268.
+            matchPackageNames: [ 'Scrutor'],
+            allowedVersions: '<7.0.0',
+            matchCurrentVersion: '/^6\\./',
         },
     ],
 }
