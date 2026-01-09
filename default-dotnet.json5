@@ -48,11 +48,5 @@
             matchPackageNames: ['pnpm'],
             allowedVersions: '<10.0.0',
         },
-        {
-            // Don't upgrade Scrutor until this is fixed: https://github.com/khellang/Scrutor/issues/268.
-            matchPackageNames: [ 'Scrutor'],
-            allowedVersions: '<7.0.0',
-            matchCurrentVersion: '/^6\\./',
-        },
     ],
 }
