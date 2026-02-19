@@ -59,6 +59,15 @@
     schedule: [
         '* 0-6 * * 7',
     ],
+    // Lock File Maintenance (see
+    // https://docs.mend.io/wsk/common-practices-for-renovate-configuration#CommonPracticesforRenovateConfiguration-LockFileMaintenance)
+    // has its own schedule and can't use the same schedule as other updates.
+    lockFileMaintenance: {
+        enabled: true,
+        schedule: [
+            '* 0-6 * * 7',
+        ],
+    },
     'git-submodules': {
         enabled: true,
     },
