@@ -46,6 +46,13 @@
             // release timestamps, should be updated right away.
             minimumReleaseAge: '0 days',
         },
+        // Disable pinning Lombiq GitHub Actions references because due to internal @dev references that wouldn't work.
+        {
+            matchManagers: ['github-actions'],
+            matchPackageNames: ['Lombiq/GitHub-Actions'],
+            matchUpdateTypes: ['pinDigest'],
+            enabled: false,
+        },
     ],
     // With GitHub Actions, concurrency is not really an issue.
     prHourlyLimit: 0,
