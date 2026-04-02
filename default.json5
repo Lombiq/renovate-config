@@ -47,10 +47,11 @@
             // release timestamps, should be updated right away.
             minimumReleaseAge: '0 days',
         },
-        // Disable pinning Lombiq GitHub Actions references because due to internal @dev references that wouldn't work.
+        // Disable pinning GitHub Actions references from certain Lombiq projects because due to internal @dev
+        // references these won't work.
         {
             matchManagers: ['github-actions'],
-            matchPackageNames: ['Lombiq/GitHub-Actions'],
+            matchPackageNames: ['Lombiq/GitHub-Actions', 'Lombiq/PowerShell-Analyzers'],
             matchUpdateTypes: ['pinDigest'],
             enabled: false,
         },
