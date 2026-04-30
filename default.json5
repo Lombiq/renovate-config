@@ -46,6 +46,13 @@
             // release timestamps, should be updated right away.
             minimumReleaseAge: '0 days',
         },
+        // Disable pinning Lombiq GitHub Actions references because due to internal @dev references that wouldn't work.
+        {
+            matchManagers: ['github-actions'],
+            matchPackageNames: ['Lombiq/GitHub-Actions'],
+            matchUpdateTypes: ['pinDigest'],
+            enabled: false,
+        },
     ],
     // With GitHub Actions, concurrency is not really an issue.
     prHourlyLimit: 0,
@@ -59,6 +66,15 @@
     schedule: [
         '* 0-6 * * 7',
     ],
+    lockFileMaintenance: {
+        enabled: true,
+        // Lock File Maintenance (see
+        // https://docs.mend.io/wsk/common-practices-for-renovate-configuration#CommonPracticesforRenovateConfiguration-LockFileMaintenance)
+        // has its own schedule and can't use the same schedule as other updates.
+        schedule: [
+            '* 0-6 * * 7',
+        ],
+    },
     'git-submodules': {
         enabled: true,
     },
@@ -87,6 +103,19 @@
             currentValueTemplate: "master",
             packageNameTemplate: "https://github.com/{{{depName}}}",
             datasourceTemplate: 'git-refs'
+        },
+        {
+            // MSBuild SDK
+            customType: 'regex',
+            managerFilePatterns: [
+                '/.csproj$/',
+            ],
+            matchStrings: [
+                'Sdk="(?<packageName>[^"/]+?)\/(?<currentValue>[^"]+?)"',
+                '<Sdk[^>]+Name="(?<packageName>[^"/]+?)"[^>]+Version="(?<currentValue>[^"]+?)"',
+                '<Import[^>]+Sdk="(?<packageName>[^"/]+?)"[^>]+Version="(?<currentValue>[^"]+?)"'
+            ],
+            datasourceTemplate: 'nuget'
         }
     ],
 }
