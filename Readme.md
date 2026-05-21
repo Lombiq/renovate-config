@@ -2,7 +2,7 @@
 
 ## About
 
-Common configuration presets for [Renovate](https://www.mend.io/renovate/) to keep the dependencies of our projects up to date (see [the docs](https://docs.renovatebot.com/config-presets/)). We usually utilize Renovate from GitHub Actions with our [Renovate workflow](https://github.com/Lombiq/GitHub-Actions/blob/dev/Docs/Workflows/Productivity/Renovate.md).
+Common configuration presets for [Renovate](https://www.mend.io/renovate/) to keep the dependencies of our projects up to date (see [the docs](https://docs.renovatebot.com/config-presets/)). We usually utilize Renovate from GitHub Actions with our [Renovate workflow](https://github.com/Lombiq/GitHub-Actions/blob/dev/Docs/Workflows/Productivity/Renovate.md). Check out the [Orchard Harvest talk about using Renovate](https://www.youtube.com/watch?v=P2jy8xuvqos).
 
 If you're a Lombiq team member, check out [the corresponding wiki page](https://lombiq.atlassian.net/wiki/spaces/DEV/pages/3336241155/Dependency+updates+with+Renovate) too.
 
