@@ -105,6 +105,19 @@
             currentValueTemplate: "master",
             packageNameTemplate: "https://github.com/{{{depName}}}",
             datasourceTemplate: 'git-refs'
+        },
+        {
+            // MSBuild SDK
+            customType: 'regex',
+            managerFilePatterns: [
+                '/.csproj$/',
+            ],
+            matchStrings: [
+                'Sdk="(?<packageName>[^"/]+?)\/(?<currentValue>[^"]+?)"',
+                '<Sdk[^>]+Name="(?<packageName>[^"/]+?)"[^>]+Version="(?<currentValue>[^"]+?)"',
+                '<Import[^>]+Sdk="(?<packageName>[^"/]+?)"[^>]+Version="(?<currentValue>[^"]+?)"'
+            ],
+            datasourceTemplate: 'nuget'
         }
     ],
 }
