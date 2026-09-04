@@ -36,6 +36,17 @@
             ],
         },
         {
+            // xUnit v4 (xunit.v3/xunit.runner.visualstudio 4.x) requires Microsoft.Testing.Platform, whose MTP v2
+            // dropped support for the legacy VSTest mode of "dotnet test" on the .NET 10 SDK (see
+            // https://aka.ms/dotnet-test-mtp-error). Our shared CI still invokes "dotnet test" in that legacy mode, so
+            // this needs a coordinated migration (e.g. a global.json "test" runner config) done by hand, not an
+            // automated major update.
+            groupName: 'xUnit packages',
+            matchPackageNames: [ 'xunit.*' ],
+            matchUpdateTypes: ['major'],
+            enabled: false,
+        },
+        {
             groupName: 'SixLabors ImageSharp packages',
             matchPackageNames: ['SixLabors.ImageSharp*'],
         },
